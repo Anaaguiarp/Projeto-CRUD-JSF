@@ -7,10 +7,13 @@
     <groupId>br.com.projeto</groupId>
     <artifactId>FrontEnd</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <name>frontend-jsf Maven Webapp</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
-        <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
     </properties>
@@ -44,6 +47,7 @@
     <build>
         <finalName>frontend-jsf</finalName>
         <plugins>
+
             <!-- Plugin WAR -->
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
@@ -52,6 +56,18 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+
+            <!-- Tomcat 7 plugin (para rodar com mvn tomcat7:run) -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <path>/FrontEnd</path>
+                    <port>8081</port>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
