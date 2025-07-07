@@ -1,7 +1,0 @@
-entity\usuario.class
-br\com\projeto\bean\consultaBean.class
-service\impl\usuarioImpl.class
-dao\usuarioDAO.class
-br\com\projeto\bean\cadastroBean.class
-model\usuarioVO.class
-service\usuarioService.class

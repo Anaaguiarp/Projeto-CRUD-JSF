@@ -1,0 +1,66 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="title">
+        Cadastro de Usuário
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form id="formCadastro">
+            <p:panel header="Cadastro de Pessoa Física:" style="width:900px;">
+                <p:messages showDetail="true" closable="true" />
+                <p:panelGrid columns="2" columnClasses="label,value" style="width:100%; margin-bottom:1em;">
+
+                    <p:outputLabel for="nome" value="Nome Completo:" style="text-align: left; white-space: nowrap;" />
+                    <p:inputText id="nome" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.nome}" style="width:100%;" />
+
+                    <p:outputLabel for="cpf" value="CPF:" styleClass="label" />
+                    <p:inputMask id="cpf"
+                                 value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.cpf}"
+                                 mask="999.999.999-99"
+                                 autoClear="true"
+                                 unmask="true"
+                                 style="width:100%;" />
+
+                    <p:outputLabel for="dataNascimento" value="Data de Nascimento:" styleClass="label" />
+                    <p:calendar id="dataNascimento" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.dataNascimento}" pattern="dd/MM/yyyy" showIcon="true" />
+
+                    <p:outputLabel value="Gênero" />
+                    <p:selectOneRadio id="genero" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.genero}" layout="lineDirection">
+                        <f:selectItem itemLabel="Feminino" itemValue="F"/>
+                        <f:selectItem itemLabel="Masculino" itemValue="M"/>
+                        <f:selectItem itemLabel="Outros" itemValue="O"/>
+                    </p:selectOneRadio>
+
+                    <p:outputLabel value="Estado Cívil" />
+                    <p:selectOneRadio id="line" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.estadoCivil}" layout="lineDirection">
+                        <f:selectItem itemLabel="Solteiro(a)" itemValue="Solteiro(a)"/>
+                        <f:selectItem itemLabel="Casado(a)" itemValue="Casado(a)"/>
+                        <f:selectItem itemLabel="Divorciado(a)" itemValue="Divorciado(a)"/>
+                        <f:selectItem itemLabel="Viúvo(a)" itemValue="Viúvo(a)"/>
+                        <f:selectItem itemLabel="Separado(a) judicialmente" itemValue="Separado(a) judicialmente"/>
+                        <f:selectItem itemLabel="União estável" itemValue="União estável"/>
+                    </p:selectOneRadio>
+
+                    <p:outputLabel for="email" value="E-mail:" style="text-align: left; white-space: nowrap;" />
+                    <p:inputText id="email" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.descricaoEvento}" style="width:100%;" />
+
+                    <p:outputLabel for="telefone" value="Telefone:" />
+                    <p:inputMask id="telefone"
+                                 value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.telefone}"
+                                 mask="(99) 9 9999-9999"
+                                 autoClear="true"
+                                 unmask="true"
+                                 style="width:100%;" />
+
+                <!-- Adicionar campo de endereço -->
+
+                </p:panelGrid>
+
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
