@@ -20,7 +20,7 @@ public class PessoaFisicaVO {
     public PessoaFisicaVO() {
     }
 
-    public PessoaFisicaVO(String nome, String cpf, Date dataNasc, String genero, String estadoCivil, String email, String telefone, LocalDate dataCadastro, Endereco endereco) {
+    public PessoaFisicaVO(String nome, String cpf, Date dataNasc, String genero, String estadoCivil, String email, String telefone, Endereco endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNasc = dataNasc;
@@ -28,7 +28,6 @@ public class PessoaFisicaVO {
         this.estadoCivil = estadoCivil;
         this.email = email;
         this.telefone = telefone;
-        this.dataCadastro = dataCadastro;
         this.endereco = endereco;
     }
 
@@ -117,5 +116,10 @@ public class PessoaFisicaVO {
                 && Objects.equals(telefone, pessoaFisicaVO.telefone)
                 && Objects.equals(dataCadastro, pessoaFisicaVO.dataCadastro)
                 && Objects.equals(endereco, pessoaFisicaVO.endereco);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, cpf, dataNasc, genero, estadoCivil, email, telefone, dataCadastro, endereco);
     }
 }

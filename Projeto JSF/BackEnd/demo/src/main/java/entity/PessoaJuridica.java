@@ -15,8 +15,6 @@ public class PessoaJuridica {
     private String razaoSocial;
     @Column(nullable = false, length = 18, unique = true, updatable = false)
     private String cnpj;
-    @Column(nullable = false)
-    private String inscricaoEstadual;
     @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false, length = 15)
@@ -61,14 +59,6 @@ public class PessoaJuridica {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
-    }
-
-    public String getInscricaoEstadual() {
-        return inscricaoEstadual;
-    }
-
-    public void setInscricaoEstadual(String inscricaoEstadual) {
-        this.inscricaoEstadual = inscricaoEstadual;
     }
 
     public String getEmail() {
