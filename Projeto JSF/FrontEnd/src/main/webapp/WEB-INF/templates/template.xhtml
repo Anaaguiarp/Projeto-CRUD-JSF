@@ -11,7 +11,7 @@
 <h:body>
     <h:form id="menuForm">
         <!-- Menu -->
-        <p:menubar>
+        <p:menubar style="background-color: #fffff">
             <p:menuitem value="Home" url="#{request.contextPath}/home.xhtml" icon="pi pi-home" />
             <p:menuitem value="Consulta" url="#{request.contextPath}/usuario/consulta.xhtml" icon="pi pi-search-plus" styleClass="custom-menuitem"/>
         </p:menubar>
@@ -23,8 +23,8 @@
     </ui:insert>
 
     <!-- Rodapé -->
-    <div style="text-align:center; margin-top:20px;">
-        <ui:insert name="footer">Rodapé Padrão</ui:insert>
-    </div>
+        <footer style="text-align: center; margin-top: 15px; padding: 15px; background-color: #f0f0f0;">
+            <h:outputText value="Rodapé Padrão"/>
+        </footer>
 </h:body>
 </html>

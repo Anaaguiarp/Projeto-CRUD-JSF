@@ -10,13 +10,13 @@
 
     <ui:define name="content">
         <h:form id="formCadastro">
-            <p:panel header="Cadastro de Pessoa Física:" style="width:900px;">
+            <br/>
+            <p:panel header="Cadastro de Pessoa Física:" style="width:900px; justify-self: center">
                 <p:messages showDetail="true" closable="true" />
-                <p:panelGrid columns="2" columnClasses="label,value" style="width:100%; margin-bottom:1em;">
 
-                    <p:outputLabel for="nome" value="Nome Completo:" style="text-align: left; white-space: nowrap;" />
+                    <p:outputLabel for="nome" value="Nome Completo:" style="text-align: left; white-space: nowrap;" styleClass="label"/>
                     <p:inputText id="nome" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.nome}" style="width:100%;" />
-
+                <br/><br/>
                     <p:outputLabel for="cpf" value="CPF:" styleClass="label" />
                     <p:inputMask id="cpf"
                                  value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.cpf}"
@@ -24,18 +24,19 @@
                                  autoClear="true"
                                  unmask="true"
                                  style="width:100%;" />
-
+                <br/><br/>
                     <p:outputLabel for="dataNascimento" value="Data de Nascimento:" styleClass="label" />
-                    <p:calendar id="dataNascimento" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.dataNascimento}" pattern="dd/MM/yyyy" showIcon="true" />
-
-                    <p:outputLabel value="Gênero" />
+                <br/>
+                    <p:calendar id="dataNascimento" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.dataNascimento}" pattern="dd/MM/yyyy" showIcon="true"  />
+                <br/><br/>
+                    <p:outputLabel value="Gênero" styleClass="label" />
                     <p:selectOneRadio id="genero" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.genero}" layout="lineDirection">
                         <f:selectItem itemLabel="Feminino" itemValue="F"/>
                         <f:selectItem itemLabel="Masculino" itemValue="M"/>
                         <f:selectItem itemLabel="Outros" itemValue="O"/>
                     </p:selectOneRadio>
-
-                    <p:outputLabel value="Estado Cívil" />
+                <br/><br/>
+                    <p:outputLabel value="Estado Cívil" styleClass="label" />
                     <p:selectOneRadio id="line" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.estadoCivil}" layout="lineDirection">
                         <f:selectItem itemLabel="Solteiro(a)" itemValue="Solteiro(a)"/>
                         <f:selectItem itemLabel="Casado(a)" itemValue="Casado(a)"/>
@@ -44,22 +45,46 @@
                         <f:selectItem itemLabel="Separado(a) judicialmente" itemValue="Separado(a) judicialmente"/>
                         <f:selectItem itemLabel="União estável" itemValue="União estável"/>
                     </p:selectOneRadio>
-
-                    <p:outputLabel for="email" value="E-mail:" style="text-align: left; white-space: nowrap;" />
+                <br/><br/>
+                    <p:outputLabel for="email" value="E-mail:" styleClass="label" style="text-align: left; white-space: nowrap;" />
                     <p:inputText id="email" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.descricaoEvento}" style="width:100%;" />
-
-                    <p:outputLabel for="telefone" value="Telefone:" />
+                <br/><br/>
+                    <p:outputLabel for="telefone" value="Telefone:" styleClass="label" />
                     <p:inputMask id="telefone"
                                  value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.telefone}"
                                  mask="(99) 9 9999-9999"
                                  autoClear="true"
                                  unmask="true"
-                                 style="width:100%;" />
-
+                                 style="width:100%;"/>
+                <br/><br/>
                 <!-- Adicionar campo de endereço -->
-
-                </p:panelGrid>
-
+                    <p:outputLabel for="CEP" value="CEP:" styleClass="label" />
+                    <p:inputMask id="CEP"
+                                 value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.cep}"
+                                 mask="99999-999"
+                                 autoClear="true"
+                                 unmask="true"
+                                 style="width:100%;"/>
+                <br/><br/>
+                    <p:outputLabel for="logradouro" value="Logradouro:" style="text-align: left; white-space: nowrap;" styleClass="label" />
+                    <p:inputText id="logradouro" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.logradouro}" style="width:100%;" />
+                <br/><br/>
+                    <p:outputLabel for="numero" value="Número:" style="text-align: left; white-space: nowrap;" styleClass="label" />
+                <br/>
+                    <p:inputNumber id="numero" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.numero}" style="width:100%;" />
+                <br/><br/>
+                    <p:outputLabel for="complemento" value="Complemento:" style="text-align: left; white-space: nowrap;" styleClass="label" />
+                    <p:inputText id="complemento" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.complemento}" style="width:100%;" />
+                <br/><br/>
+                    <p:outputLabel for="bairro" value="Bairro:" style="text-align: left; white-space: nowrap;" styleClass="label" />
+                    <p:inputText id="bairro" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.bairro}" style="width:100%;" />
+                <br/><br/>
+                    <p:outputLabel for="cidade" value="Cidade:" style="text-align: left; white-space: nowrap;" styleClass="label" />
+                    <p:inputText id="cidade" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.cidade}" style="width:100%;" />
+                <br/><br/>
+                    <p:outputLabel for="estado" value="Estado:" style="text-align: left; white-space: nowrap;" styleClass="label" />
+                    <p:inputText id="estado" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.estado}" style="width:100%;" />
+                <br/><br/>
             </p:panel>
         </h:form>
     </ui:define>
