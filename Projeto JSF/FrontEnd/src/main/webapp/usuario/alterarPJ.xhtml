@@ -5,12 +5,17 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 xmlns:p="http://primefaces.org/ui">
     <ui:define name="title">
-        Cadastro de Usuário
+        Formulário de Alteração
     </ui:define>
-
     <ui:define name="content">
-        <h:form id="formCadastroPJ">
-            <p:panel header="Cadastro de Pessoa Jurídica:" style="width:900px; justify-self: center; margin-top: 15px">
+        <h:form id="formAlteracao">
+            <!-- Inclui o modal (confirmarModel.xhtml) para reutilização -->
+            <ui:include src="../model/confirmarModel.xhtml">
+                <ui:param name="modalBean" value="#{consultaPessoaJuridicaBean}"/>
+            </ui:include>
+
+            <p:panel header="Formulário de Alteração" style="width:900px; justify-self: center; margin-top: 15px">
+                <!-- Mensagens gerais de erro -->
                 <p:messages showDetail="true" closable="true"/>
 
                 <p:outputLabel for="nomeFantasia" value="Nome Fantasia:" style="text-align: left; white-space: nowrap;"

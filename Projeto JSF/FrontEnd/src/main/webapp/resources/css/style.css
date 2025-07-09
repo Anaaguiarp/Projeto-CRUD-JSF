@@ -6,6 +6,7 @@
     width: 160px;
 }
 
-.input {
-    margin-bottom: 180px;
+.meuInput {
+    display: block !important;
+    margin-bottom: 12px !important;
 }
