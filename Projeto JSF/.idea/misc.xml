@@ -6,6 +6,12 @@
       <list>
         <option value="$PROJECT_DIR$/BackEnd/demo/pom.xml" />
         <option value="$PROJECT_DIR$/FrontEnd/pom.xml" />
+        <option value="$PROJECT_DIR$/pessoa-fisica-service/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/cep-service/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/pessoa-juridica-service/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/cep-api-service/pom.xml" />
+        <option value="$PROJECT_DIR$/pessoa-fisica-service/pom.xml" />
+        <option value="$PROJECT_DIR$/pessoa-juridica-service/pom.xml" />
       </list>
     </option>
   </component>
