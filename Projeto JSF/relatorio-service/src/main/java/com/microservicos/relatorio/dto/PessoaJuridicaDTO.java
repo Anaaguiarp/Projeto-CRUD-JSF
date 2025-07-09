@@ -1,0 +1,13 @@
+package com.microservicos.relatorio.dto;
+
+import java.time.LocalDate;
+
+public record PessoaJuridicaDTO(
+        String nomeFantasia,
+        String razaoSocial,
+        String cnpj,
+        String email,
+        String telefone,
+        LocalDate dataCadastro,
+        EnderecoDTO endereco
+) {}
