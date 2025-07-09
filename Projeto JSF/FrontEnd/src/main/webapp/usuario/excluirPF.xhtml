@@ -1,0 +1,105 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="title">
+        Exclusão de Usuário
+    </ui:define>
+    <ui:define name="content">
+        <h:form id="formExclusao">
+            <ui:include src="/model/confirmarExclusaoModel.xhtml">
+                <ui:param name="modalBean" value="#{consultaPessoaFisicaBean}"/>
+            </ui:include>
+            <p:panel header="Informações de Usuário:" style="width:900px; justify-self: center; margin-top: 15px">
+                <p:messages showDetail="true" closable="true"/>
+                <p:outputLabel for="nome" value="Nome Completo:" style="text-align:left; white-space:nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="nome" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.nome}"
+                              styleClass="meuInput"/>
+
+                <p:outputLabel for="cpf" value="CPF:" styleClass="label"/>
+                <h:outputText id="cpf" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.numeroCPF}"
+                              styleClass="meuInput"/>
+
+                <p:outputLabel for="dataNascimento" value="Data de nascimento:" styleClass="label"/>
+                <h:outputText id="dataNascimento" styleClass="meuInput">
+                    <f:convertDateTime pattern="dd/MM/yyyy"
+                                       value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.dataNascimento}"/>
+                </h:outputText>
+
+                <p:outputLabel value="Gênero" styleClass="label"/>
+                <p:selectOneRadio id="genero" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.genero}"
+                                  layout="lineDirection" styleClass="meuInput">
+                    <f:selectItem itemLabel="Feminino" itemValue="F"/>
+                    <f:selectItem itemLabel="Masculino" itemValue="M"/>
+                    <f:selectItem itemLabel="Outros" itemValue="O"/>
+                </p:selectOneRadio>
+
+                <p:outputLabel value="Estado Cívil" styleClass="label"/>
+                <p:selectOneRadio id="line" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.estadoCivil}"
+                                  layout="lineDirection" styleClass="meuInput">
+                    <f:selectItem itemLabel="Solteiro(a)" itemValue="Solteiro(a)"/>
+                    <f:selectItem itemLabel="Casado(a)" itemValue="Casado(a)"/>
+                    <f:selectItem itemLabel="Divorciado(a)" itemValue="Divorciado(a)"/>
+                    <f:selectItem itemLabel="Viúvo(a)" itemValue="Viúvo(a)"/>
+                    <f:selectItem itemLabel="Separado(a) judicialmente" itemValue="Separado(a) judicialmente"/>
+                    <f:selectItem itemLabel="União estável" itemValue="União estável"/>
+                </p:selectOneRadio>
+
+                <p:outputLabel for="email" value="E-mail:" styleClass="label"/>
+                <h:outputText id="email" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.email}"
+                              styleClass="meuInput"/>
+
+                <p:outputLabel for="telefone" value="Telefone:" styleClass="label"/>
+                <p:inputMask id="telefone"
+                             value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.telefone}"
+                             mask="(99) 9 9999-9999"
+                             autoClear="true"
+                             unmask="true"
+                             style="width:100%;"
+                             styleClass="meuInput"/>
+
+                <p:outputLabel for="CEP" value="CEP:" styleClass="label"/>
+                <p:inputMask id="CEP"
+                             value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.cep}"
+                             mask="99999-999"
+                             autoClear="true"
+                             unmask="true"
+                             style="width:100%;"
+                             styleClass="meuInput"/>
+
+                <p:outputLabel for="logradouro" value="Logradouro:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <p:inputText id="logradouro" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.logradouro}"
+                             style="width:100%;" styleClass="meuInput"/>
+
+                <p:outputLabel for="numero" value="Número:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <p:inputNumber id="numero" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.numero}"
+                               style="width:100%;" styleClass="meuInput"/>
+
+                <p:outputLabel for="complemento" value="Complemento:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <p:inputText id="complemento" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.complemento}"
+                             style="width:100%;" styleClass="meuInput"/>
+
+                <p:outputLabel for="bairro" value="Bairro:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <p:inputText id="bairro" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.bairro}"
+                             style="width:100%;" styleClass="meuInput"/>
+
+                <p:outputLabel for="cidade" value="Cidade:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <p:inputText id="cidade" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.cidade}"
+                             style="width:100%;" styleClass="meuInput"/>
+
+                <p:outputLabel for="estado" value="Estado:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <p:inputText id="estado" value="#{consultaPessoaFisicaBean.cadastrarPessoaFisica.estado}"
+                             style="width:100%;" styleClass="meuInput"/>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
