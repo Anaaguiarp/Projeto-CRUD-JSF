@@ -1,20 +1,25 @@
-package entity;
+package com.projetofinal.demo.entity;
 
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
-public class PessoaJuridica {
+public class PessoaFisica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(nullable = false)
-    private String nomeFantasia;
+    private String nome;
+    @Column(nullable = false, length = 14, unique = true, updatable = false)
+    private String cpf;
+    @Column(nullable = false, length = 10)
+    private Date dataNasc;
     @Column(nullable = false)
-    private String razaoSocial;
-    @Column(nullable = false, length = 18, unique = true, updatable = false)
-    private String cnpj;
+    private String genero;
+    @Column(nullable = false)
+    private String estadoCivil;
     @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false, length = 15)
@@ -25,7 +30,7 @@ public class PessoaJuridica {
     @JoinColumn(name = "id")
     private Endereco endereco;
 
-    public PessoaJuridica() {
+    public PessoaFisica() {
     }
 
     @PrePersist
@@ -37,28 +42,44 @@ public class PessoaJuridica {
         return id;
     }
 
-    public String getNomeFantasia() {
-        return nomeFantasia;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeFantasia(String nomeFantasia) {
-        this.nomeFantasia = nomeFantasia;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getRazaoSocial() {
-        return razaoSocial;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setRazaoSocial(String razaoSocial) {
-        this.razaoSocial = razaoSocial;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public String getCnpj() {
-        return cnpj;
+    public Date getDataNasc() {
+        return dataNasc;
     }
 
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
+    public void setDataNasc(Date dataNasc) {
+        this.dataNasc = dataNasc;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
     }
 
     public String getEmail() {
