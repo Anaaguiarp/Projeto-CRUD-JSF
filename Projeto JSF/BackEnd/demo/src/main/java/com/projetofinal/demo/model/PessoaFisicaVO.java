@@ -1,6 +1,6 @@
-package model;
+package com.projetofinal.demo.model;
 
-import entity.Endereco;
+import com.projetofinal.demo.entity.Endereco;
 
 import java.time.LocalDate;
 import java.util.Date;
