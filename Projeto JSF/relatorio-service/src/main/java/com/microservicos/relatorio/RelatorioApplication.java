@@ -1,13 +1,13 @@
-package com.microservicos.cep_api;
+package com.microservicos.relatorio;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CepApiApplication {
+public class RelatorioApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CepApiApplication.class, args);
+		SpringApplication.run(RelatorioApplication.class, args);
 	}
 
 }

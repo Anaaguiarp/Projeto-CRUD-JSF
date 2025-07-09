@@ -12,7 +12,13 @@
         <option value="$PROJECT_DIR$/cep-api-service/pom.xml" />
         <option value="$PROJECT_DIR$/pessoa-fisica-service/pom.xml" />
         <option value="$PROJECT_DIR$/pessoa-juridica-service/pom.xml" />
+        <option value="$PROJECT_DIR$/relatorio-service/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/cep-api-service/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_24" default="true" project-jdk-name="openjdk-24" project-jdk-type="JavaSDK">

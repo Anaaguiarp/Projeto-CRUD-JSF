@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="FrontEnd" />
       </profile>
-      <profile name="Annotation profile for pessoa-juridica" enabled="true">
+      <profile name="Annotation profile for relatorio" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -16,12 +16,13 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="pessoa-fisica" />
-        <module name="cep-api" />
         <module name="pessoa-juridica" />
+        <module name="relatorio" />
         <module name="demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cep-api" target="24" />
       <module name="cep-service" target="24" />
       <module name="pf-service" target="24" />
       <module name="pj-service" target="24" />
@@ -36,6 +37,7 @@
       <module name="pessoa-juridica" options="-parameters" />
       <module name="pf-service" options="-parameters" />
       <module name="pj-service" options="-parameters" />
+      <module name="relatorio" options="-parameters" />
     </option>
   </component>
 </project>

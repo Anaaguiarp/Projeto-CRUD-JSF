@@ -1,10 +1,10 @@
-package com.microservicos.cep_api;
+package com.microservicos.relatorio;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CepApiApplicationTests {
+class RelatorioApplicationTests {
 
 	@Test
 	void contextLoads() {
