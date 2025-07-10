@@ -19,16 +19,10 @@ public class PessoaJuridicaController {
     public PessoaJuridica create(@RequestBody PessoaJuridica pessoaJuridica) {
         return pessoaJuridicaService.criar(pessoaJuridica);
     }
-<<<<<<< Updated upstream
+
     @PutMapping("/atualizar/{id}")
     public PessoaJuridica update (@PathVariable Long id, @RequestBody PessoaJuridica pessoaJuridica) {
         return pessoaJuridicaService.atualizar(id, pessoaJuridica);
-=======
-
-    @PutMapping("/atualizar/{id}")
-    public PessoaJuridica update(@RequestBody PessoaJuridica pessoaJuridica) {
-        return pessoaJuridicaService.atualizar(pessoaJuridica);
->>>>>>> Stashed changes
     }
 
     @GetMapping("/")

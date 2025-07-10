@@ -16,7 +16,7 @@ public class PessoaJuridica {
     private String nomeFantasia;
     @Column(nullable = false)
     private String razaoSocial;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true, length = 18, updatable = false)
     private String cnpj;
     @Column(nullable = false)
     private String email;
