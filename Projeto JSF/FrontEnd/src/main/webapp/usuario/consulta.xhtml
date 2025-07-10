@@ -31,7 +31,8 @@
                         <div style="text-align: right;">
                             <p:commandButton value="Download PDF Pessoa Física"
                                              icon="pi pi-download"
-                                             onclick="window.open('/relatorios/pessoa-fisica', '_black'); return false;"/>
+                                             ajax="false"
+                                             onclick="this.form.action='http://localhost:8083/relatorios/pessoa-fisica'; this.form.method='get'; this.form.submit(); return false;" />
                         </div>
                     </div>
             </p:panel>
