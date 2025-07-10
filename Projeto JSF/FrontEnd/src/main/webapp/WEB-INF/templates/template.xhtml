@@ -4,6 +4,24 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
 <h:head>
+    <style>
+        .ui-menubar {
+            background-color: #AD2003 !important;
+        }
+
+        .ui-menubar .ui-menuitem-text {
+            color: bisque !important;
+            font-weight: bold;
+        }
+
+        .ui-menubar .ui-menuitem-icon {
+            color: bisque !important;
+        }
+
+        .ui-menubar .ui-menuitem-link:hover {
+            background-color: #C62828 !important;
+        }
+    </style>
     <title>
         <ui:insert name="title">Meu Projeto</ui:insert>
     </title>
@@ -11,7 +29,7 @@
 <h:body>
     <h:form id="menuForm">
         <!-- Menu -->
-        <p:menubar style="background-color: #fffff">
+        <p:menubar>
             <p:menuitem value="Home" url="#{request.contextPath}/home.xhtml" icon="pi pi-home" />
             <p:menuitem value="Consulta" url="#{request.contextPath}/usuario/consulta.xhtml" icon="pi pi-search-plus" styleClass="custom-menuitem"/>
         </p:menubar>
@@ -23,8 +41,8 @@
     </ui:insert>
 
     <!-- Rodapé -->
-        <footer style="text-align: center; margin-top: 15px; padding: 15px; background-color: #f0f0f0;">
-            <h:outputText value="Rodapé Padrão"/>
+        <footer style="text-align: center; margin-top: 15px; padding: 15px; background-color: #836868;">
+            <h:outputText value="Rodapé Padrão" style="color: bisque"/>
         </footer>
 </h:body>
 </html>
