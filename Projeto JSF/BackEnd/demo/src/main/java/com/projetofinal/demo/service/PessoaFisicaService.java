@@ -5,14 +5,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.projetofinal.demo.repository.PessoaFisicaRepo;
 
+<<<<<<< Updated upstream
 import java.util.List;
 import java.util.Optional;
 
+=======
+>>>>>>> Stashed changes
 @Service
 public class PessoaFisicaService {
     @Autowired
     private PessoaFisicaRepo pessoaFisicaRepo;
 
+<<<<<<< Updated upstream
     public List<PessoaFisica> listar(){
         return pessoaFisicaRepo.findAll();
     }
@@ -29,5 +33,7 @@ public class PessoaFisicaService {
         pessoaFisicaRepo.deleteById(id);
     }
 
+=======
+>>>>>>> Stashed changes
     public PessoaFisica
 }
