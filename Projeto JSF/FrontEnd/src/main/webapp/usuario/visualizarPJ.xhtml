@@ -8,6 +8,69 @@
         Formulário de Visualização
     </ui:define>
     <ui:define name="content">
+        <h:form>
+            <p:panel header="Formulário de Visualização" style="width:900px; justify-self: center; margin-top: 15px">
+                <p:messages showDetail="true" closable="true"/>
 
+                <p:outputLabel for="nomeFantasia" value="Nome Fantasia:" style="text-align:left; white-space:nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="nomeFantasia"
+                              value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.nomeFantasia}"
+                              styleClass="meuInput"/>
+
+                <p:outputLabel for="razaoSocial" value="Razão Social:" styleClass="label"/>
+                <h:outputText id="razaoSocial" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.razaoSocial}"
+                              styleClass="meuInput"/>
+
+                <p:outputLabel for="cnpj" value="CNPJ:" styleClass="label"/>
+                <h:outputText id="cnpj"
+                              value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.cnpj}" style="width:100%;"
+                              styleClass="meuInput"/>
+
+                <p:outputLabel for="email" value="E-mail:" styleClass="label"/>
+                <h:outputText id="email" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.email}"
+                              styleClass="meuInput"/>
+
+                <p:outputLabel for="telefone" value="Telefone:" styleClass="label"/>
+                <h:outputText id="telefone"
+                              value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.telefone}" style="width:100%;"
+                              styleClass="meuInput"/>
+
+                <p:outputLabel for="CEP" value="CEP:" styleClass="label"/>
+                <h:outputText id="CEP"
+                              value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.cep}" style="width:100%;"
+                              styleClass="meuInput"/>
+
+                <p:outputLabel for="logradouro" value="Logradouro:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="logradouro" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.logradouro}"
+                              style="width:100%;" styleClass="meuInput"/>
+
+                <p:outputLabel for="numero" value="Número:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="numero" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.numero}"
+                              style="width:100%;" styleClass="meuInput"/>
+
+                <p:outputLabel for="complemento" value="Complemento:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="complemento" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.complemento}"
+                              style="width:100%;" styleClass="meuInput"/>
+
+                <p:outputLabel for="bairro" value="Bairro:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="bairro" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.bairro}"
+                              style="width:100%;" styleClass="meuInput"/>
+
+                <p:outputLabel for="cidade" value="Cidade:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="cidade" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.cidade}"
+                              style="width:100%;" styleClass="meuInput"/>
+
+                <p:outputLabel for="estado" value="Estado:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="estado" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.estado}"
+                              style="width:100%;" styleClass="meuInput"/>
+            </p:panel>
+        </h:form>
     </ui:define>
 </ui:composition>

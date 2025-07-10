@@ -9,9 +9,11 @@
     </ui:define>
     <ui:define name="content">
         <h:form id="formExclusao">
+
             <ui:include src="/model/confirmarExclusaoModel.xhtml">
                 <ui:param name="modalBean" value="#{consultaPessoaJuridicaBean}"/>
             </ui:include>
+
             <p:panel header="Informações de Usuário:" style="width:900px; justify-self: center; margin-top: 15px">
                 <p:messages showDetail="true" closable="true"/>
                 <p:outputLabel for="nomeFantasia" value="Nome Fantasia:" style="text-align:left; white-space:nowrap;"
@@ -69,6 +71,15 @@
                 <p:outputLabel for="estado" value="Estado:" style="text-align: left; white-space: nowrap;" styleClass="label"/>
                 <p:inputText id="estado" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.estado}" style="width:100%;" styleClass="meuInput"/>
             </p:panel>
+            <p:dialog widgetVar="successDialog" header="Sucesso" modal="true" closable="false" resizable="false">
+                <h:outputText value="Exclusão realizada com sucesso!" />
+                <f:facet name="footer">
+                    <p:commandButton value="Ok"
+                                     action="#{consultaPessoaJuridicaBean.atualizarConsulta}"
+                                     ajax="false"
+                                     icon="pi pi-check" />
+                </f:facet>
+            </p:dialog>
         </h:form>
     </ui:define>
 </ui:composition>
