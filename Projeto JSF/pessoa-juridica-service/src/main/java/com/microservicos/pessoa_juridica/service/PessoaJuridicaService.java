@@ -22,8 +22,26 @@ public class PessoaJuridicaService {
         return  pessoaJuridicaRepository.save(pessoaJuridica);
     }
 
-    public PessoaJuridica atualizar(PessoaJuridica pessoaJuridica) {
-        return pessoaJuridicaRepository.save(pessoaJuridica);
+    public PessoaJuridica atualizar(Long id, PessoaJuridica pessoaJuridica) {
+        Optional<PessoaJuridica> pessoaJuridicaOptional = pessoaJuridicaRepository.findById(id);
+        if (pessoaJuridicaOptional.isPresent()) {
+            PessoaJuridica pessoaJuridicaExistente = pessoaJuridicaOptional.get();
+
+            pessoaJuridicaExistente.setNomeFantasia(pessoaJuridica.getNomeFantasia());
+            pessoaJuridicaExistente.setRazaoSocial(pessoaJuridica.getRazaoSocial());
+            pessoaJuridicaExistente.setEmail(pessoaJuridica.getEmail());
+            pessoaJuridicaExistente.setTelefone(pessoaJuridica.getTelefone());
+            pessoaJuridicaExistente.setCep(pessoaJuridica.getCep());
+            pessoaJuridicaExistente.setLogradouro(pessoaJuridica.getLogradouro());
+            pessoaJuridicaExistente.setNumero(pessoaJuridica.getNumero());
+            pessoaJuridicaExistente.setComplemento(pessoaJuridica.getComplemento());
+            pessoaJuridicaExistente.setBairro(pessoaJuridica.getBairro());
+            pessoaJuridicaExistente.setCidade(pessoaJuridica.getCidade());
+            pessoaJuridicaExistente.setEstado(pessoaJuridica.getEstado());
+
+            return pessoaJuridicaRepository.save(pessoaJuridicaExistente);
+
+        }
     }
 
     public Optional<PessoaJuridica> buscarPorId(Long id) {

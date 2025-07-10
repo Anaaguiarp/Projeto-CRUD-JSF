@@ -21,8 +21,8 @@ public class PessoaJuridicaController {
     }
 
     @PutMapping("/pessoa-juridica/{id}")
-    public PessoaJuridica update(@RequestBody PessoaJuridica pessoaJuridica) {
-        return pessoaJuridicaService.atualizar(pessoaJuridica);
+    public PessoaJuridica update(@PathVariable Long id, @RequestBody PessoaJuridica pessoaJuridica) {
+        return pessoaJuridicaService.atualizar(id, pessoaJuridica);
     }
 
     @GetMapping("/")
