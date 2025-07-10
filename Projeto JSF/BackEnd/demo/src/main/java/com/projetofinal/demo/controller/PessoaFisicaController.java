@@ -4,6 +4,8 @@ import com.projetofinal.demo.entity.PessoaFisica;
 import com.projetofinal.demo.repository.PessoaFisicaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import com.projetofinal.demo.service.PessoaFisicaService;
 
 import java.util.List;

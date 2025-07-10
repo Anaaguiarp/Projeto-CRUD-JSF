@@ -29,4 +29,5 @@ public class PessoaFisicaService {
         pessoaFisicaRepo.deleteById(id);
     }
 
+    public PessoaFisica
 }
