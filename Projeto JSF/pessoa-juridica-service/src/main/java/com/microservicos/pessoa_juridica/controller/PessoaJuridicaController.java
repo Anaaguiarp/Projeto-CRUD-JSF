@@ -17,7 +17,12 @@ public class PessoaJuridicaController {
 
     @PostMapping("/pessoa-juridica")
     public PessoaJuridica create(@RequestBody PessoaJuridica pessoaJuridica) {
-        return pessoaJuridicaService.salvar(pessoaJuridica);
+        return pessoaJuridicaService.criar(pessoaJuridica);
+    }
+
+    @PutMapping("/pessoa-juridica/{id}")
+    public PessoaJuridica update(@RequestBody PessoaJuridica pessoaJuridica) {
+        return pessoaJuridicaService.atualizar(pessoaJuridica);
     }
 
     @GetMapping("/")

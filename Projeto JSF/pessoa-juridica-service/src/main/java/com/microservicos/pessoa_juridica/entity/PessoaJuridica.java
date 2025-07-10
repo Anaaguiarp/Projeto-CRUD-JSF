@@ -36,7 +36,6 @@ public class PessoaJuridica {
     private String cidade;
     @Column(nullable = false)
     private String estado;
-    @Column(nullable = false)
     private String complemento;
 
     public PessoaJuridica() {}

@@ -18,8 +18,12 @@ public class PessoaJuridicaService {
         return pessoaJuridicaRepository.findAll();
     }
 
-    public PessoaJuridica salvar(PessoaJuridica pessoaJuridica) {
+    public PessoaJuridica criar(PessoaJuridica pessoaJuridica) {
         return  pessoaJuridicaRepository.save(pessoaJuridica);
+    }
+
+    public PessoaJuridica atualizar(PessoaJuridica pessoaJuridica) {
+        return pessoaJuridicaRepository.save(pessoaJuridica);
     }
 
     public Optional<PessoaJuridica> buscarPorId(Long id) {
