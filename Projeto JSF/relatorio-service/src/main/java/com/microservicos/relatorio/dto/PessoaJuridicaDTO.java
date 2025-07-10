@@ -9,5 +9,11 @@ public record PessoaJuridicaDTO(
         String email,
         String telefone,
         LocalDate dataCadastro,
-        EnderecoDTO endereco
+        String cep,
+        String cidade,
+        String uf,
+        String logadouro,
+        String numero,
+        String bairro,
+        String complemento
 ) {}
