@@ -114,7 +114,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
                     <path>/FrontEnd</path>
-                    <port>8080</port>
+                    <port>8084</port>
                     <defaultContextFile>${basedir}/src/main/webapp/META-INF/context.xml</defaultContextFile>
                 </configuration>
             </plugin>

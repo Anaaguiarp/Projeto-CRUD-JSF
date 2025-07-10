@@ -29,10 +29,20 @@
                         </p:dataTable>
                         <br/>
                         <div style="text-align: right;">
-                            <p:commandButton value="Download PDF Pessoa Física"
-                                             icon="pi pi-download"
-                                             ajax="false"
-                                             onclick="this.form.action='http://localhost:8083/relatorios/pessoa-fisica'; this.form.method='get'; this.form.submit(); return false;" />
+                            <p:commandButton id="dynaButton" value="Download PDF" type="button" icon="pi pi-bars" styleClass="ui-button-secondary" style="width:10%;"/>
+                            <p:menu overlay="true" trigger="dynaButton" my="left top" at="left bottom">
+                                <p:submenu label="Gerar Relatório" >
+                                    <p:menuitem value="Relatório Pessoa Física" icon="pi pi-download"
+                                                ajax="false"
+                                                onclick="this.form.action='http://localhost:8083/relatorios/pessoa-fisica'; this.form.method='get'; this.form.submit(); return false;"/>
+                                    <p:menuitem value="Relatório Pessoa Jurídica" icon="pi pi-download"
+                                                ajax="false"
+                                                onclick="this.form.action='http://localhost:8083/relatorios/pessoa-juridica'; this.form.method='get'; this.form.submit(); return false;"/>
+                                    <p:menuitem value="Relatório Geral" icon="pi pi-download"
+                                                ajax="false"
+                                                onclick="this.form.action='http://localhost:8083/relatorios/pessoas'; this.form.method='get'; this.form.submit(); return false;"/>
+                                </p:submenu>
+                            </p:menu>
                         </div>
                     </div>
             </p:panel>
