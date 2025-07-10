@@ -15,13 +15,12 @@ public class PessoaJuridicaController {
     @Autowired
     private PessoaJuridicaService pessoaJuridicaService;
 
-    @PostMapping("/pessoa-juridica")
+    @PostMapping("/criar")
     public PessoaJuridica create(@RequestBody PessoaJuridica pessoaJuridica) {
         return pessoaJuridicaService.criar(pessoaJuridica);
     }
-
-    @PutMapping("/pessoa-juridica/{id}")
-    public PessoaJuridica update(@PathVariable Long id, @RequestBody PessoaJuridica pessoaJuridica) {
+    @PutMapping("/atualizar/{id}")
+    public PessoaJuridica update (@PathVariable Long id, @RequestBody PessoaJuridica pessoaJuridica) {
         return pessoaJuridicaService.atualizar(id, pessoaJuridica);
     }
 
@@ -30,12 +29,12 @@ public class PessoaJuridicaController {
         return pessoaJuridicaService.listar();
     }
 
-    @GetMapping("/pessoa-juridica/{id}")
+    @GetMapping("/{id}")
     public Optional<PessoaJuridica> findById(@PathVariable Long id) {
         return pessoaJuridicaService.buscarPorId(id);
     }
 
-    @DeleteMapping("/pessoa-juridica/{id}")
+    @DeleteMapping("/deletar/{id}")
     public void delete(@PathVariable Long id) {
         pessoaJuridicaService.excluir(id);
     }

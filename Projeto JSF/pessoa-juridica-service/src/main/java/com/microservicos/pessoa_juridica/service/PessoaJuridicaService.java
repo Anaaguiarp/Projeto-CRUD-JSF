@@ -40,8 +40,8 @@ public class PessoaJuridicaService {
             pessoaJuridicaExistente.setEstado(pessoaJuridica.getEstado());
 
             return pessoaJuridicaRepository.save(pessoaJuridicaExistente);
-
         }
+        return null;
     }
 
     public Optional<PessoaJuridica> buscarPorId(Long id) {
