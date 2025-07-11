@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
+import java.util.*;
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class RelatorioService {
@@ -113,9 +113,12 @@ public class RelatorioService {
 
             document.open();
 
-            Font tituloNegrito = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 16); // Tamanho opcional
+            Font titulo = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 16);
+            Font subtitulo = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 13);
 
-            document.add(new Paragraph("Relatório de Pessoas Físicas", tituloNegrito));
+            document.add(new Paragraph("Relatório de Pessoas Físicas e Jurídicas", titulo));
+
+            document.add(new Paragraph("Relatório de Pessoas Físicas", subtitulo));
             document.add(new Paragraph(" "));
 
             for (PessoaFisicaDTO pf : pessoasFisicas){
@@ -131,7 +134,7 @@ public class RelatorioService {
                 document.add(new Paragraph(" "));
             }
 
-            document.add(new Paragraph("Relatório de Pessoas Jurídica", tituloNegrito));
+            document.add(new Paragraph("Relatório de Pessoas Jurídica", subtitulo));
             document.add(new Paragraph(" "));
 
             for (PessoaJuridicaDTO pj : pessoasJuridicas){
@@ -145,6 +148,64 @@ public class RelatorioService {
                 document.add(new Paragraph("Bairro: " + pj.bairro()));
                 document.add(new Paragraph("Logadouro: " + pj.logradouro()));
                 document.add(new Paragraph("Número: " + pj.numero()));
+                document.add(new Paragraph(" "));
+            }
+
+            document.close();
+
+        }catch(Exception e){
+            throw new RuntimeException("Erro ao gerar PDF: " + e.getMessage());
+        }
+    }
+
+    private void exportarPessoasEstadosPdf(Map<String, List<PessoaFisicaDTO>> pfPorUf, Map<String, List<PessoaJuridicaDTO>> pjPorUf, HttpServletResponse response){
+        try {
+            response.setContentType("application/pdf");
+            response.setHeader("Content-Disposition", "attachment; filename=pessoas-por-uf.pdf");
+
+            Document document = new Document();
+            PdfWriter.getInstance(document, response.getOutputStream());
+
+            document.open();
+            Font titulo = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 16);
+            Font subtitulo = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 13);
+
+            document.add(new Paragraph("Relatório de Pessoas Físicas e Jurídicas por UF", titulo));
+            document.add(new Paragraph(" "));
+
+            Set<String> ufs = new TreeSet<>();
+            ufs.addAll(pfPorUf.keySet());
+            ufs.addAll(pjPorUf.keySet());
+
+            for (String uf : ufs) {
+                document.add(new Paragraph("UF: " + uf, subtitulo));
+                document.add(new Paragraph(" "));
+
+                List<PessoaFisicaDTO> pfs = pfPorUf.getOrDefault(uf, List.of());
+                if (!pfs.isEmpty()) {
+                    document.add(new Paragraph("Pessoas Físicas:", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12)));
+                    for (PessoaFisicaDTO pf : pfs) {
+                        document.add(new Paragraph("Nome: " + pf.nome()));
+                        document.add(new Paragraph("CPF: " + pf.cpf()));
+                        document.add(new Paragraph("Email: " + pf.email()));
+                        document.add(new Paragraph("Cidade: " + pf.cidade()));
+                        document.add(new Paragraph(" "));
+                    }
+                }
+
+                List<PessoaJuridicaDTO> pjs = pjPorUf.getOrDefault(uf, List.of());
+                if (!pjs.isEmpty()) {
+                    document.add(new Paragraph("Pessoas Jurídicas:", FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12)));
+                    for (PessoaJuridicaDTO pj : pjs) {
+                        document.add(new Paragraph("Nome Fantasia: " + pj.nomeFantasia()));
+                        document.add(new Paragraph("CNPJ: " + pj.cnpj()));
+                        document.add(new Paragraph("Email: " + pj.email()));
+                        document.add(new Paragraph("Cidade: " + pj.cidade()));
+                        document.add(new Paragraph(" "));
+                    }
+                }
+
+                document.add(new Paragraph("--------------------------------------------------"));
                 document.add(new Paragraph(" "));
             }
 
@@ -170,5 +231,24 @@ public class RelatorioService {
         List<PessoaJuridicaDTO> pessoasJuridicas = buscarPJViaREST();
         exportarPessoaJuridicaPdf(pessoasJuridicas, response);
     }
+
+    public void gerarRelatorioPessoasEstados(HttpServletResponse response){
+        List<PessoaFisicaDTO> pessoasFisicas = buscarPFViaREST();
+        List<PessoaJuridicaDTO> pessoasJuridicas = buscarPJViaREST();
+
+        Map<String, List<PessoaFisicaDTO>> pfPorUf = pessoasFisicas.stream()
+                .filter(p -> p.uf() != null)
+                .collect(Collectors.groupingBy(PessoaFisicaDTO::uf));
+
+        Map<String, List<PessoaJuridicaDTO>> pjPorUf = pessoasJuridicas.stream()
+                .filter(p -> p.estado() != null)
+                .collect(Collectors.groupingBy(PessoaJuridicaDTO::estado));
+
+        exportarPessoasEstadosPdf(pfPorUf, pjPorUf, response);
+    }
+
+
+
+
 
 }

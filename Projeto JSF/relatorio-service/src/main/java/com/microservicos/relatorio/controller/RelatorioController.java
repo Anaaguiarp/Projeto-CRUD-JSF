@@ -28,4 +28,9 @@ public class RelatorioController {
         relatorioService.gerarRelatorioPessoaJuridica(response);
     }
 
+    @GetMapping("/pessoas-estado")
+    public void gerarRelatorioPessoaEstado(HttpServletResponse response) {
+        relatorioService.gerarRelatorioPessoasEstados(response);
+    }
+
 }
