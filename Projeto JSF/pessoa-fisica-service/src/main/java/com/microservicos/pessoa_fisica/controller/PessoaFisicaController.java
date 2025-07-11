@@ -20,7 +20,7 @@ public class PessoaFisicaController {
         return pessoaFisicaService.salvar(pessoaFisica);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<PessoaFisica> findAll(){
         return pessoaFisicaService.listar();
     }
@@ -28,6 +28,11 @@ public class PessoaFisicaController {
     @GetMapping("/{id}")
     public Optional<PessoaFisica> findById(@PathVariable Long id){
         return pessoaFisicaService.buscarPorId(id);
+    }
+
+    @PutMapping("/atualizar/{id}")
+    public PessoaFisica update (@PathVariable Long id, @RequestBody PessoaFisica pessoaFisica){
+        return pessoaFisicaService.atualizar(id, pessoaFisica);
     }
 
     @DeleteMapping("/deletar/{id}")

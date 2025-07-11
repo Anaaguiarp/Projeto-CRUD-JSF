@@ -29,4 +29,27 @@ public class PessoaFisicaService {
     public void excluir(Long id){
         pessoaFisicaRepository.deleteById(id);
     }
+
+    public PessoaFisica atualizar(Long id, PessoaFisica pessoaFisica) {
+        Optional<PessoaFisica> pessoaFisicaOptional = pessoaFisicaRepository.findById(id);
+        if (pessoaFisicaOptional.isPresent()) {
+            PessoaFisica pessoaFisicaExistente = pessoaFisicaOptional.get();
+
+            pessoaFisicaExistente.setNome(pessoaFisica.getNome());
+            pessoaFisicaExistente.setGenero(pessoaFisica.getGenero());
+            pessoaFisicaExistente.setEstadoCivil(pessoaFisica.getEstadoCivil());
+            pessoaFisicaExistente.setEmail(pessoaFisica.getEmail());
+            pessoaFisicaExistente.setTelefone(pessoaFisica.getTelefone());
+            pessoaFisicaExistente.setCep(pessoaFisica.getCep());
+            pessoaFisicaExistente.setLogadouro(pessoaFisica.getLogadouro());
+            pessoaFisicaExistente.setNumero(pessoaFisica.getNumero());
+            pessoaFisicaExistente.setComplemento(pessoaFisica.getComplemento());
+            pessoaFisicaExistente.setBairro(pessoaFisica.getBairro());
+            pessoaFisicaExistente.setCidade(pessoaFisica.getCidade());
+            pessoaFisicaExistente.setUf(pessoaFisica.getUf());
+
+            return pessoaFisicaRepository.save(pessoaFisicaExistente);
+        }
+        return null;
+    }
 }

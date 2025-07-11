@@ -18,18 +18,18 @@
                 <h:outputText id="output" />
                 <p:messages showDetail="true" closable="true" />
                     <div>
-                        <p:dataTable>
-                            <p:column headerText="Nome Fantasia/Nome" style="width:25%;">
-
+                        <p:dataTable value="#{consultaPessoaBean.pessoas}" var="pessoa">
+                            <p:column headerText="Nome" style="width:25%;">
+                                #{pessoa.nome}
                             </p:column>
                             <p:column headerText="CNPJ/CPF" style="width:25%;">
-
+                                #{pessoa.documento}
                             </p:column>
                             <p:column headerText="Email" style="width: 25%;">
-
+                                #{pessoa.email}
                             </p:column>
                             <p:column headerText="Data de Cadastro" style="width: 25%;">
-
+                                #{pessoa.dataCadastro}
                             </p:column>
                             <p:column headerText="Ações" exportable="false" style="text-align:center; width:300px;">
                             <div style="display:flex; justify-content:center; align-items:center; gap:10px;">

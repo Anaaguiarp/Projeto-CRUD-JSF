@@ -25,6 +25,7 @@
     <bytecodeTargetLevel>
       <module name="cep-api" target="24" />
       <module name="cep-service" target="24" />
+      <module name="demo" target="24" />
       <module name="pf-service" target="24" />
       <module name="pj-service" target="24" />
     </bytecodeTargetLevel>

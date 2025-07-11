@@ -25,7 +25,7 @@ public class PessoaJuridicaController {
         return pessoaJuridicaService.atualizar(id, pessoaJuridica);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<PessoaJuridica> findAll() {
         return pessoaJuridicaService.listar();
     }

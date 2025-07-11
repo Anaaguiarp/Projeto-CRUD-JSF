@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Getter @Setter @Data
 public class PessoaJuridicaVO {
     private Long id;
-    private String nomeFantasia;
+    private String nome;
     private String razaoSocial;
     private String cnpj;
     private String email;
