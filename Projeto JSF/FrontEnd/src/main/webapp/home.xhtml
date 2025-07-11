@@ -11,11 +11,39 @@
     <ui:define name="content">
         <h:form>
             <div style="width:100%; text-align:center; margin-top:100px;">
-                <h:outputText value="Seja bem-vindo!"
-                              style="font-size:36px; font-weight:bold; display:block; margin-bottom:20px;" />
+                <p:panel styleClass="painel-boas-vindas" style="margin-bottom: 2rem;">
+                    <h2 style="margin: 0; color: #c9031a;">Bem-vindo(a) ao Sistema</h2>
+                    <p>Gerencie cadastros de pessoas físicas e jurídicas de forma eficiente.</p>
+                </p:panel>
 
-                <h:outputText value="Use o menu acima para navegar pelas telas."
-                              style="font-size:22px;" />
+                <!-- Cards de navegação do sistema -->
+                <div class="ui-g justify-center">
+                    <div class="ui-g-4">
+                        <p:card styleClass="card-home">
+                            <p:commandButton id="dynaButton" value="Cadastrar Usuário" type="button" icon="pi pi-bars" />
+                            <p:menu overlay="true" trigger="dynaButton" my="left top" at="left bottom">
+                                <p:submenu label="Realizar cadastro" >
+                                    <p:menuitem value="Pessoa Física" icon="pi pi-user-plus"
+                                                ajax="false"
+                                                action="/usuario/cadastrarPF.xhtml"/>
+                                    <p:menuitem value="Pessoa Jurídica" icon="pi pi-user-plus"
+                                                ajax="false"
+                                                action="/usuario/cadastrarPJ.xhtml"/>
+                                </p:submenu>
+                            </p:menu>
+                        </p:card>
+                    </div>
+                    <div class="ui-g-4">
+                        <p:card styleClass="card-home">
+                            <p:commandButton value="Ir para Consulta" action="/usuario/consulta.xhtml" icon="pi pi-search"/>
+                        </p:card>
+                    </div>
+                </div>
+
+                <!-- Texto introdutório -->
+                <p:panel header="Sobre o sistema" style="margin-top: 2rem;">
+                    <p>Este sistema foi desenvolvido para facilitar a gestão de cadastros de usuários, com foco em simplicidade e eficiência.</p>
+                </p:panel>
             </div>
         </h:form>
     </ui:define>

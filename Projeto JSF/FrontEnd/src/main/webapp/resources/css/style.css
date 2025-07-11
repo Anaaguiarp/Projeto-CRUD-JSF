@@ -6,7 +6,34 @@
     width: 160px;
 }
 
-.meuInput {
+.input {
     display: block !important;
     margin-bottom: 12px !important;
+}
+
+.painel-alteracao .ui-panel-titlebar {
+    font-size: 25px;
+}
+
+.ui-g.justify-center {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* espaçamento entre os cards */
+}
+
+.ui-menubar {
+    background-color: #c9031a !important;
+}
+
+.ui-menubar .ui-menuitem-text {
+    color: bisque !important;
+    font-weight: bold;
+}
+
+.ui-menubar .ui-menuitem-icon {
+    color: bisque !important;
+}
+
+.ui-menubar .ui-menuitem-link:hover {
+    background-color: #d83018 !important;
 }

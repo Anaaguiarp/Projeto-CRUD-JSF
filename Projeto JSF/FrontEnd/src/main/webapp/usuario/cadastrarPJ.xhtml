@@ -10,19 +10,19 @@
 
     <ui:define name="content">
         <h:form id="formCadastroPJ">
-            <p:panel header="Cadastro de Pessoa Jurídica:" style="width:900px; justify-self: center; margin-top: 15px">
+            <p:panel header="Cadastro de Pessoa Jurídica:" style="width:900px; justify-self: center; margin-top: 15px" styleClass="painel-alteracao">
                 <p:messages showDetail="true" closable="true"/>
 
                 <p:outputLabel for="nomeFantasia" value="Nome Fantasia:" style="text-align: left; white-space: nowrap;"
                                styleClass="label"/>
                 <p:inputText id="nomeFantasia"
                              value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.nomeFantasia}"
-                             style="width:100%;" styleClass="meuInput"/>
+                             style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="razaoSocial" value="Razão Social:" style="text-align: left; white-space: nowrap;"
                                styleClass="label"/>
                 <p:inputText id="razaoSocial" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.razaoSocial}"
-                             style="width:100%;" styleClass="meuInput"/>
+                             style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="cnpj" value="CNPJ:" styleClass="label"/>
                 <p:inputMask id="cnpj"
@@ -31,12 +31,12 @@
                              autoClear="true"
                              unmask="true"
                              style="width:100%;"
-                             styleClass="meuInput"/>
+                             styleClass="input"/>
 
                 <p:outputLabel for="email" value="E-mail:" styleClass="label"
                                style="text-align: left; white-space: nowrap;"/>
                 <p:inputText id="email" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.descricaoEvento}"
-                             style="width:100%;" styleClass="meuInput"/>
+                             style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="telefone" value="Telefone:" styleClass="label"/>
                 <p:inputMask id="telefone"
@@ -45,7 +45,7 @@
                              autoClear="true"
                              unmask="true"
                              style="width:100%;"
-                             styleClass="meuInput"/>
+                             styleClass="input"/>
 
 
                 <p:outputLabel for="CEP" value="CEP:" styleClass="label"/>
@@ -55,38 +55,45 @@
                              autoClear="true"
                              unmask="true"
                              style="width:100%;"
-                             styleClass="meuInput"/>
+                             styleClass="input"/>
 
                 <p:outputLabel for="logradouro" value="Logradouro:" style="text-align: left; white-space: nowrap;"
                                styleClass="label"/>
                 <p:inputText id="logradouro" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.logradouro}"
-                             style="width:100%;" styleClass="meuInput"/>
+                             style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="numero" value="Número:" style="text-align: left; white-space: nowrap;"
                                styleClass="label"/>
                 <p:inputNumber id="numero" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.numero}"
-                               style="width:100%;" styleClass="meuInput"/>
+                               style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="complemento" value="Complemento:" style="text-align: left; white-space: nowrap;"
                                styleClass="label"/>
                 <p:inputText id="complemento" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.complemento}"
-                             style="width:100%;" styleClass="meuInput"/>
+                             style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="bairro" value="Bairro:" style="text-align: left; white-space: nowrap;"
                                styleClass="label"/>
                 <p:inputText id="bairro" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.bairro}"
-                             style="width:100%;" styleClass="meuInput"/>
+                             style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="cidade" value="Cidade:" style="text-align: left; white-space: nowrap;"
                                styleClass="label"/>
                 <p:inputText id="cidade" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.cidade}"
-                             style="width:100%;" styleClass="meuInput"/>
+                             style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="estado" value="Estado:" style="text-align: left; white-space: nowrap;"
                                styleClass="label"/>
                 <p:inputText id="estado" value="#{consultaPessoaJuridicaBean.cadastrarPessoaJuridica.estado}"
-                             style="width:100%;" styleClass="meuInput"/>
+                             style="width:100%;" styleClass="input"/>
 
+                <!-- Adicionar validação dos campos -->
+                <p:commandButton value="Salvar"
+                                 update="@form"
+                                 style="width: 200px;"
+                                 icon="pi pi-save"
+                                 ajax="true"
+                                 styleClass="ui-button-success"/>
             </p:panel>
         </h:form>
         <script src="../resources/script/validacaoEmail.js"/>
