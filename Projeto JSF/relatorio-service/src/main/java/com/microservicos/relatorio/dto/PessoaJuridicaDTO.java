@@ -11,8 +11,8 @@ public record PessoaJuridicaDTO(
         LocalDate dataCadastro,
         String cep,
         String cidade,
-        String uf,
-        String logadouro,
+        String estado,
+        String logradouro,
         String numero,
         String bairro,
         String complemento
