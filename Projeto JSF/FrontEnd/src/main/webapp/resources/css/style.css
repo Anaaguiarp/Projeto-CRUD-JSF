@@ -37,3 +37,12 @@
 .ui-menubar .ui-menuitem-link:hover {
     background-color: #d83018 !important;
 }
+
+footer {
+  background-color: #c9031a;
+  padding: 15px;
+  text-align: center;
+  margin-top: auto;
+  color: bisque;
+  font-weight: bold;
+}

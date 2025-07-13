@@ -27,7 +27,7 @@ public class PessoaJuridicaService {
         if (pessoaJuridicaOptional.isPresent()) {
             PessoaJuridica pessoaJuridicaExistente = pessoaJuridicaOptional.get();
 
-            pessoaJuridicaExistente.setNome(pessoaJuridica.getNome());
+            pessoaJuridicaExistente.setNomeFantasia(pessoaJuridica.getNomeFantasia());
             pessoaJuridicaExistente.setRazaoSocial(pessoaJuridica.getRazaoSocial());
             pessoaJuridicaExistente.setEmail(pessoaJuridica.getEmail());
             pessoaJuridicaExistente.setTelefone(pessoaJuridica.getTelefone());
