@@ -2,9 +2,9 @@ package com.projeto.bean;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.projeto.PessoaDTO;
-import com.projeto.PessoaFisica;
-import com.projeto.PessoaJuridica;
+import com.projeto.model.PessoaDTO;
+import com.projeto.model.PessoaFisica;
+import com.projeto.model.PessoaJuridica;
 import jakarta.annotation.PostConstruct;
 
 import javax.faces.bean.ManagedBean;
@@ -82,7 +82,7 @@ public class ConsultaPessoaBean implements Serializable {
         List<PessoaDTO> lista = new ArrayList<>();
         for (PessoaJuridica pj : juridicas) {
             PessoaDTO dto = new PessoaDTO();
-            dto.setNome(pj.getNome());
+            dto.setNome(pj.getNomeFantasia());
             dto.setIdentificador(pj.getCnpj());
             dto.setEmail(pj.getEmail());
             dto.setDataCadastro(pj.getDataCadastro());
