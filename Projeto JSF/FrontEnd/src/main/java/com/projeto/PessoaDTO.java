@@ -5,15 +5,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class PessoaDTO {
     private String nome;
-    @JsonProperty("cpf")
-    private String cpf;
-    @JsonProperty("cnpj")
-    private String cnpj;
+    private String identificador;
     private String email;
-    private String dataCadastro;
+    private LocalDate dataCadastro;
+    private String tipo;
 
     public String getNome() {
         return nome;
@@ -23,17 +21,13 @@ public class PessoaDTO {
         this.nome = nome;
     }
 
-    public String getDocumento() {
-        return cpf != null ? cpf : cnpj;
+    public String getIdentificador() {
+        return identificador;
     }
 
-    public String getCpf() { return cpf; }
-
-    public void setCpf(String cpf) { this.cpf = cpf; }
-
-    public String getCnpj() { return cnpj; }
-
-    public void setCnpj(String cnpj) { this.cnpj = cnpj; }
+    public void setIdentificador(String identificador) {
+        this.identificador = identificador;
+    }
 
     public String getEmail() {
         return email;
@@ -43,11 +37,19 @@ public class PessoaDTO {
         this.email = email;
     }
 
-    public String getDataCadastro() {
+    public LocalDate getDataCadastro() {
         return dataCadastro;
     }
 
-    public void setDataCadastro(String dataCadastro) {
+    public void setDataCadastro(LocalDate dataCadastro) {
         this.dataCadastro = dataCadastro;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }

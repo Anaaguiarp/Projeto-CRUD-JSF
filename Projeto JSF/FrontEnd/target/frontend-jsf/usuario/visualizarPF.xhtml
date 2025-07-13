@@ -1,0 +1,100 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="title">
+        Formulário de Visualização
+    </ui:define>
+    <ui:define name="content">
+        <h:form>
+            <p:panel header="Formulário de Visualização" style="width:900px; justify-self: center; margin-top: 15px" styleClass="painel-alteracao">
+                <p:messages showDetail="true" closable="true"/>
+
+                <p:outputLabel for="nome" value="Nome Completo:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="nome" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.nome}"
+                              style="width:100%;" styleClass="input"/>
+
+                <p:outputLabel for="cpf" value="CPF:" styleClass="label"/>
+                <h:outputText id="cpf" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.cpf}"
+                              style="width:100%;" styleClass="input"/>
+
+                <p:outputLabel for="dataNascimento" value="Data de Nascimento:" styleClass="label"/>
+                <h:outputText id="dataNascimento"
+                              value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.dataNascimento}"
+                              styleClass="input">
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                </h:outputText>
+
+                <p:outputLabel value="Gênero" styleClass="label"/>
+                <h:outputText id="genero" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.genero}"
+                              styleClass="input"/>
+
+                <p:outputLabel value="Estado Cívil" styleClass="label"/>
+                <h:outputText id="line" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.estadoCivil}"
+                              styleClass="input"/>
+
+                <p:outputLabel for="email" value="E-mail:" styleClass="label"
+                               style="text-align: left; white-space: nowrap;"/>
+                <h:outputText id="email" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.descricaoEvento}"
+                              style="width:100%;" styleClass="input"/>
+
+                <p:outputLabel for="telefone" value="Telefone:" styleClass="label"/>
+                <h:outputText id="telefone" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.telefone}"
+                              style="width:100%;" styleClass="input"/>
+
+
+                <p:outputLabel for="CEP" value="CEP:" styleClass="label"/>
+                <h:outputText id="CEP" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.cep}"
+                              style="width:100%;" styleClass="input"/>
+
+                <p:outputLabel for="logradouro" value="Logradouro:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="logradouro" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.logradouro}"
+                              style="width:100%;" styleClass="input"/>
+
+                <p:outputLabel for="numero" value="Número:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="numero" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.numero}"
+                              style="width:100%;" styleClass="input"/>
+
+                <p:outputLabel for="complemento" value="Complemento:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="complemento" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.complemento}"
+                              style="width:100%;" styleClass="input"/>
+
+                <p:outputLabel for="bairro" value="Bairro:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="bairro" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.bairro}"
+                              style="width:100%;" styleClass="input"/>
+
+                <p:outputLabel for="cidade" value="Cidade:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="cidade" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.cidade}"
+                              style="width:100%;" styleClass="input"/>
+
+                <p:outputLabel for="estado" value="Estado:" style="text-align: left; white-space: nowrap;"
+                               styleClass="label"/>
+                <h:outputText id="estado" value="#{consultaPessoaFisicaBean.pessoaFisicaSelecionada.estado}"
+                              style="width:100%;" styleClass="input"/>
+
+                <!-- Adicionar validação dos campos -->
+                <p:commandButton value="Voltar para home"
+                                 outcome="../home.xhtml"
+                                 style="width: 200px;"
+                                 icon="pi pi-save"
+                                 ajax="true"
+                                 styleClass="ui-button-secundary"/>
+                <!-- Adicionar validação dos campos -->
+                <p:commandButton value="Voltar para listagem"
+                                 outcome="consulta.xhtml"
+                                 style="width: 200px;"
+                                 icon="pi pi-save"
+                                 ajax="true"
+                                 styleClass="ui-button-secundary"/>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>

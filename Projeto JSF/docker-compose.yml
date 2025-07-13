@@ -1,0 +1,66 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: projetojsf
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user123
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  pessoa-fisica:
+    build: ./pessoa-fisica-service
+    container_name: pessoa-fisica
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3307/projetojsf
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: user123
+    ports:
+      - "8081:8080"
+    networks:
+      - app-network
+
+  pessoa-juridica:
+    build: ./pessoa-juridica-service
+    container_name: pessoa-juridica
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3307/projetojsf
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: user123
+    ports:
+      - "8082:8080"
+    networks:
+      - app-network
+
+  relatorio:
+    build: ./relatorio-service
+    container_name: relatorio
+    ports:
+      - "8083:8080"
+    networks:
+      - app-network
+
+  frontend-jsf:
+    build: ./FrontEnd
+    container_name: frontend-jsf
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+volumes:
+  mysql_data:
+
+networks:
+  app-network:

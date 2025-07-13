@@ -1,5 +1,8 @@
-com\projeto\PessoaService$2.class
-com\projeto\ConsultaPessoaBean.class
-com\projeto\PessoaService$1.class
-com\projeto\PessoaService.class
+com\projeto\bean\ConsultaPessoaBean.class
+com\projeto\PessoaJuridica.class
+com\projeto\bean\CadastroPessoaJuridicaBean.class
+com\projeto\bean\CadastroPessoaFisicaBean.class
+com\projeto\PessoaFisica.class
 com\projeto\PessoaDTO.class
+com\projeto\bean\ConsultaPessoaBean$2.class
+com\projeto\bean\ConsultaPessoaBean$1.class
