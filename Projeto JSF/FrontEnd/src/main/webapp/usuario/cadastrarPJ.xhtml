@@ -46,6 +46,21 @@
                              style="width:100%;"
                              styleClass="input"/>
 
+                <p:outputLabel for="estado" value="Estado:" style="text-align: left; white-space: nowrap" styleClass="label"/>
+                <h:selectOneMenu id="estado"
+                                 value="#{cadastroPessoaJuridicaBean.pessoaJuridica.estado}"
+                                 styleClass="ui-selectonemenu select-custom input"
+                                 style="width: 100%;">
+                    <f:passThroughAttribute name="data-estado-salvo" value="#{cadastroPessoaJuridicaBean.pessoaJuridica.estado}" />
+                </h:selectOneMenu>
+
+                <p:outputLabel for="cidade" value="Cidade:" style="text-align: left; white-space: nowrap;" styleClass="label"/>
+                <h:selectOneMenu id="cidade"
+                                 value="#{cadastroPessoaJuridicaBean.pessoaJuridica.cidade}"
+                                 styleClass="ui-selectonemenu select-custom input"
+                                 style="width: 100%;">
+                    <f:passThroughAttribute name="data-cidade-salvo" value="#{cadastroPessoaJuridicaBean.pessoaJuridica.cidade}" />
+                </h:selectOneMenu>
 
                 <p:outputLabel for="CEP" value="CEP:" styleClass="label"/>
                 <p:inputMask id="CEP"
@@ -76,15 +91,6 @@
                 <p:inputText id="bairro" value="#{cadastroPessoaJuridicaBean.pessoaJuridica.bairro}"
                              style="width:100%;" styleClass="input"/>
 
-                <p:outputLabel for="cidade" value="Cidade:" style="text-align: left; white-space: nowrap;"
-                               styleClass="label"/>
-                <p:inputText id="cidade" value="#{cadastroPessoaJuridicaBean.pessoaJuridica.cidade}"
-                             style="width:100%;" styleClass="input"/>
-
-                <p:outputLabel for="estado" value="Estado:" style="text-align: left; white-space: nowrap;"
-                               styleClass="label"/>
-                <p:inputText id="estado" value="#{cadastroPessoaJuridicaBean.pessoaJuridica.estado}"
-                             style="width:100%;" styleClass="input"/>
 
                 <p:commandButton value="Cadastrar"
                                  action="#{cadastroPessoaJuridicaBean.cadastrar}"
@@ -95,6 +101,10 @@
                                  styleClass="ui-button-success"/>
             </p:panel>
         </h:form>
-        <script src="../resources/script/validacaoEmail.js"/>
+        <h:outputScript library="js" name="validacaoEmail.js"/>
+        <h:outputScript library="js" name="endereco-ibge.js" target="body"/>
+        <h:outputScript target="body">
+            carregarEstadosECidades('formCadastroPJ', 'estado', 'cidade');
+        </h:outputScript>
     </ui:define>
 </ui:composition>

@@ -14,7 +14,7 @@ public class PessoaFisica {
     private LocalDate dataCadastro;
     private String cep;
     private String cidade;
-    private String uf;
+    private String estado;
     private String logadouro;
     private String numero;
     private String bairro;
@@ -100,12 +100,12 @@ public class PessoaFisica {
         this.cidade = cidade;
     }
 
-    public String getUf() {
-        return uf;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setUf(String uf) {
-        this.uf = uf;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getLogadouro() {
