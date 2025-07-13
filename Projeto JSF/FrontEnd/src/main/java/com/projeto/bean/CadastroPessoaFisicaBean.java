@@ -1,7 +1,7 @@
 package com.projeto.bean;
 
 import com.google.gson.Gson;
-import com.projeto.PessoaFisica;
+import com.projeto.model.PessoaFisica;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 
