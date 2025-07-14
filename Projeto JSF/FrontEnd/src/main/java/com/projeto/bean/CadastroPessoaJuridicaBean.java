@@ -23,7 +23,7 @@ public class CadastroPessoaJuridicaBean implements Serializable {
             Gson gson = new Gson();
             String json = gson.toJson(pessoaJuridica);
 
-            URL url = new URL("http://pessoa-juridica:8080/pessoa-juridica/criar");
+            URL url = new URL("http://localhost:8082/pessoa-juridica/criar");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
             conn.setDoOutput(true);

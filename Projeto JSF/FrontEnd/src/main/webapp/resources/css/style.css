@@ -1,3 +1,16 @@
+.banner-home {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.banner-home {
+    width: 100%;
+    max-height: 580px;
+    height: auto;
+    display: block;
+}
+
 .label {
     font-weight: bold;
     text-align: right;
