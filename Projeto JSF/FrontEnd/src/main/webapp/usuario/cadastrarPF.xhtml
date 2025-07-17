@@ -28,17 +28,16 @@
                              styleClass="input"/>
 
                 <p:outputLabel for="dataNascimento" value="Data de Nascimento:" styleClass="label"/>
-
                 <p:calendar id="dataNascimento" value="#{cadastroPessoaFisicaBean.pessoaFisica.dataNasc}"
                             pattern="dd/MM/yyyy" showIcon="true" styleClass="input"/>
 
                 <p:outputLabel value="Gênero" styleClass="label"/>
-                <p:selectOneRadio id="genero" value="#{cadastroPessoaFisicaBean.pessoaFisica.genero}"
+                <p:selectOneMenu id="genero" value="#{cadastroPessoaFisicaBean.pessoaFisica.genero}"
                                   layout="lineDirection" styleClass="input">
-                    <f:selectItem itemLabel="Feminino" itemValue="F"/>
-                    <f:selectItem itemLabel="Masculino" itemValue="M"/>
-                    <f:selectItem itemLabel="Outros" itemValue="O"/>
-                </p:selectOneRadio>
+                    <f:selectItem itemLabel="Feminino" itemValue="Feminino"/>
+                    <f:selectItem itemLabel="Masculino" itemValue="Masculino"/>
+                    <f:selectItem itemLabel="Outros" itemValue="Outros"/>
+                </p:selectOneMenu>
 
                 <p:outputLabel value="Estado Cívil" styleClass="label"/>
                 <p:selectOneRadio id="line" value="#{cadastroPessoaFisicaBean.pessoaFisica.estadoCivil}"
@@ -59,28 +58,11 @@
                 <p:outputLabel for="telefone" value="Telefone:" styleClass="label"/>
                 <p:inputMask id="telefone"
                              value="#{cadastroPessoaFisicaBean.pessoaFisica.telefone}"
-                             mask="(99) 9 9999-9999"
+                             mask="(99) 99999-9999"
                              autoClear="true"
                              unmask="true"
                              style="width:100%;"
                              styleClass="input"/>
-
-                <p:outputLabel for="estado" value="Estado:" style="text-align: left; white-space: nowrap" styleClass="label"/>
-                <h:selectOneMenu id="estado"
-                                 value="#{cadastroPessoaFisicaBean.pessoaFisica.estado}"
-                                 styleClass="ui-selectonemenu select-custom"
-                                 style="width: 100%;">
-                    <f:passThroughAttribute name="data-estado-salvo" value="#{cadastroPessoaFisicaBean.pessoaFisica.estado}" />
-                </h:selectOneMenu>
-
-
-                <p:outputLabel for="cidade" value="Cidade:" style="text-align: left; white-space: nowrap;" styleClass="label"/>
-                <h:selectOneMenu id="cidade"
-                                 value="#{cadastroPessoaFisicaBean.pessoaJuridica.cidade}"
-                                 styleClass="ui-selectonemenu select-custom input"
-                                 style="width: 100%;">
-                    <f:passThroughAttribute name="data-cidade-salvo" value="#{cadastroPessoaFisicaBean.pessoaFisica.cidade}" />
-                </h:selectOneMenu>
 
                 <p:outputLabel for="CEP" value="CEP:" styleClass="label"/>
                 <p:inputMask id="CEP"
@@ -91,9 +73,21 @@
                              style="width:100%;"
                              styleClass="input"/>
 
+                <p:outputLabel for="estado" value="Estado:" style="text-align: left; white-space: nowrap" styleClass="label"/>
+                <p:selectOneRadio id="estado" value="#{cadastroPessoaFisicaBean.pessoaFisica.estado}"
+                                  layout="lineDirection" styleClass="input">
+                    <f:selectItem itemLabel="PR" itemValue="PR"/>
+                    <f:selectItem itemLabel="RO" itemValue="RO"/>
+                    <f:selectItem itemLabel="RR" itemValue="RR"/>
+                </p:selectOneRadio>
+
+                <p:outputLabel for="cidade" value="Cidade:" style="text-align: left; white-space: nowrap;" styleClass="label"/>
+                <p:inputText id="cidade" value="#{cadastroPessoaFisicaBean.pessoaFisica.cidade}"
+                             style="width:100%;" styleClass="input"/>
+
                 <p:outputLabel for="logradouro" value="Logradouro:" style="text-align: left; white-space: nowrap;"
                                styleClass="label"/>
-                <p:inputText id="logradouro" value="#{cadastroPessoaFisicaBean.pessoaFisica.logadouro}"
+                <p:inputText id="logradouro" value="#{cadastroPessoaFisicaBean.pessoaFisica.logradouro}"
                              style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="numero" value="Número:" style="text-align: left; white-space: nowrap;"
@@ -122,9 +116,5 @@
 
         </h:form>
         <h:outputScript library="js" name="validacaoEmail.js"/>
-        <h:outputScript library="js" name="endereco-ibge.js" target="body"/>
-        <h:outputScript target="body">
-            carregarEstadosECidades('formCadastroPF', 'estado', 'cidade');
-        </h:outputScript>
     </ui:define>
 </ui:composition>

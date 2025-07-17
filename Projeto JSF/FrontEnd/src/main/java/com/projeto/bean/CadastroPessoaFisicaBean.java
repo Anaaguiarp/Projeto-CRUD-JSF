@@ -1,53 +1,37 @@
 package com.projeto.bean;
 
-import com.google.gson.Gson;
 import com.projeto.model.PessoaFisica;
-import jakarta.faces.view.ViewScoped;
-import jakarta.inject.Named;
+import com.projeto.service.PessoaFisicaServiceClient;
 
-import java.io.OutputStream;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import java.io.Serializable;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
-@Named("cadastroPessoaFisicaBean")
+@ManagedBean
 @ViewScoped
 public class CadastroPessoaFisicaBean implements Serializable {
 
     private PessoaFisica pessoaFisica = new PessoaFisica();
 
     public String cadastrar() {
-        try {
-            Gson gson = new Gson();
-            String json = gson.toJson(pessoaFisica);
+        PessoaFisicaServiceClient client = new PessoaFisicaServiceClient();
+        client.salvarPessoaFisica(pessoaFisica);
 
-            URL url = new URL("http://localhost:8081/pessoa-fisica/criar");
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        FacesContext.getCurrentInstance().addMessage(null,
+                new FacesMessage("Cadastro realizado com sucesso!"));
 
-            conn.setDoOutput(true);
-            conn.setRequestMethod("POST");
-            conn.setRequestProperty("Content-Type", "application/json");
+        pessoaFisica = new PessoaFisica();
 
-            try (OutputStream os = conn.getOutputStream()) {
-                os.write(json.getBytes());
-                os.flush();
-            }
-
-            if (conn.getResponseCode() != 200 && conn.getResponseCode() != 201) {
-                throw new RuntimeException("Erro ao cadastrar PF: HTTP " + conn.getResponseCode());
-            }
-
-            conn.disconnect();
-
-            return "consulta.xhtml?faces-redirect=true";
-        } catch (Exception e) {
-            e.printStackTrace();
-
-            return null;
-        }
+        return "consulta.xhtml?faces-redirect=true";
     }
 
     public PessoaFisica getPessoaFisica() {
         return pessoaFisica;
+    }
+
+    public void setPessoaFisica(PessoaFisica pessoaFisica) {
+        this.pessoaFisica = pessoaFisica;
     }
 }

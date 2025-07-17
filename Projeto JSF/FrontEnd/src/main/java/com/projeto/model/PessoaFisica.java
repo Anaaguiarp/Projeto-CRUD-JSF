@@ -1,9 +1,11 @@
 package com.projeto.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class PessoaFisica {
+public class PessoaFisica implements Serializable {
+    private Long id;
     private String nome;
     private String cpf;
     private Date dataNasc;
@@ -15,10 +17,18 @@ public class PessoaFisica {
     private String cep;
     private String cidade;
     private String estado;
-    private String logadouro;
+    private String logradouro;
     private String numero;
     private String bairro;
     private String complemento;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -108,12 +118,12 @@ public class PessoaFisica {
         this.estado = estado;
     }
 
-    public String getLogadouro() {
-        return logadouro;
+    public String getLogradouro() {
+        return logradouro;
     }
 
-    public void setLogadouro(String logadouro) {
-        this.logadouro = logadouro;
+    public void setLogradouro(String logadouro) {
+        this.logradouro = logadouro;
     }
 
     public String getNumero() {

@@ -1,8 +1,8 @@
 com\projeto\model\PessoaDTO.class
-com\projeto\bean\ConsultaPessoaBean.class
 com\projeto\bean\CadastroPessoaJuridicaBean.class
+com\projeto\bean\PessoaFisicaBean.class
+com\projeto\service\PessoaFisicaServiceClient$1.class
+com\projeto\service\PessoaFisicaServiceClient.class
 com\projeto\bean\CadastroPessoaFisicaBean.class
 com\projeto\model\PessoaFisica.class
-com\projeto\bean\ConsultaPessoaBean$2.class
-com\projeto\bean\ConsultaPessoaBean$1.class
 com\projeto\model\PessoaJuridica.class

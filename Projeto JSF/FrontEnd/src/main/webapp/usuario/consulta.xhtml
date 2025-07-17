@@ -18,31 +18,35 @@
                 <h:outputText id="output" />
                 <p:messages showDetail="true" closable="true" />
                     <div>
-                        <p:dataTable value="#{consultaPessoaBean.pessoas}" var="pessoa">
+                        <p:dataTable value="#{pessoaFisicaBean.pessoas}" var="pessoa">
                             <p:column headerText="Nome" style="width:25%;">
-                                #{pessoa.nome}
+                                <h:outputText value="#{pessoa.nome}" />
                             </p:column>
                             <p:column headerText="CNPJ/CPF" style="width:25%;">
-                                #{pessoa.documento}
+                                <h:outputText value="#{pessoa.cpf}" />
                             </p:column>
                             <p:column headerText="Email" style="width: 25%;">
-                                #{pessoa.email}
+                                <h:outputText value="#{pessoa.email}" />
                             </p:column>
                             <p:column headerText="Data de Cadastro" style="width: 25%;">
-                                #{pessoa.dataCadastro}
+                                <h:outputText value="#{pessoa.dataCadastro}" />
                             </p:column>
                             <p:column headerText="Ações" exportable="false" style="text-align:center; width:300px;">
                             <div style="display:flex; justify-content:center; align-items:center; gap:10px;">
                                 <p:commandButton value="Visualizar"
                                                  icon="pi pi-search-plus"
+                                                 action="#{pessoaFisicaBean.buscarPorId(pessoa.id)}"
+                                                 ajax="false"
                                                  styleClass="rounded-button"
                                                  style="width:140px;"/>
                                 <p:commandButton value="Alterar"
                                                  icon="pi pi-pencil"
+                                                 action="/usuario/alterarPF.xhtml?faces-redirect=true"
                                                  styleClass="rounded-button ui-button-warning"
                                                  style="width:140px;"/>
                                 <p:commandButton value="Excluir"
                                                  icon="pi pi-trash"
+                                                 action="/usuario/excluirPF.xhtml?faces-redirect=true"
                                                  styleClass="rounded-button ui-button-danger"
                                                  style="width:140px;"/>
                             </div>

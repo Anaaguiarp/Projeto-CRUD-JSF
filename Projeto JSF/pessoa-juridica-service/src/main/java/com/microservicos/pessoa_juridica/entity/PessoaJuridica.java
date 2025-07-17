@@ -13,7 +13,7 @@ public class PessoaJuridica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private String nomeFantasia;
+    private String nome;
     @Column(nullable = false)
     private String razaoSocial;
     @Column(nullable = false, unique = true, length = 18, updatable = false)
