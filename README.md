@@ -1,16 +1,20 @@
-# Projeto CRUD JSF
-### Objetivo do projeto
-Nosso grupo foi responsável por desenvolver um sistema funcional com foco em gestão de pessoas, utilizando microserviços e front-end JSF. As entidades principais foram Pessoa Física e Pessoa Jurídica, e a ideia era permitir o cadastro, edição, exclusão e listagem dessas pessoas por meio de uma API separada, com integração ao front-end.
+<h1>Projeto CRUD JSF - Synapse</h1>
+<p>⚠️ Este projeto ainda está em desenvolvimento e parte das integrações entre o front-end e os microsserviços está pendente.</p>
+<p>Synapse é uma aplicação modular voltada para a gestão de pessoas, que integra microsserviços para oferecer funcionalidades de cadastro e manutenção de Pessoa Física e Pessoa Jurídica, além de geração e download de relatórios.</p>
+<p>A interface front-end é desenvolvida em JSF, proporcionando uma experiência interativa e responsiva, enquanto o back-end é composto por microsserviços independentes que garantem escalabilidade, flexibilidade e manutenção facilitada.</p>
 
-### Ferramentas Utilizadas
-- Java versão 17 e 24
-- SpringBoot
-- JSF (PrimeFaces) com Tomcat
-- JavaScript
-- Docker
-- Mysql
+<p>O projeto visa facilitar a organização, consulta e análise de dados relacionados a pessoas dentro de organizações, promovendo uma gestão eficiente e integrada.</p>
 
-### Estrutura do Projeto
+<h2>Ferramentas Utilizadas</h2>
+<ul>
+    <li>Java v17(JSF) e v24(Microsserviços)</li>
+    <li>SpringBoot</li>
+    <li>JSF (PrimeFaces) com Tomcat</li>
+    <li>MySQL</li>
+</ul>
+
+<h2>Estrutura do Projeto</h2>
+
 ```
 projeto-sistema/
 ├── pessoa-fisica-service/           # Microserviço responsável pela Pessoa Física
@@ -67,5 +71,15 @@ projeto-sistema/
     │               └── templates/template.xhtml      # Template visual comum às páginas
     └── Dockerfile
 ```
-### Créditos
-É válido ressaltar nosso agradecimento especial a nosso gestor Nelson Konishi que nos prestou todo apoio e nos permitiu explorar os conhecimentos adquiridos, além de nos guiar muito bem, realmente se comprometendo com nosso aprendizado. Também os créditos ao Felipe Henrique que nos ajudou muito na base de conhecimento em JSF e microserviços, se disponibilizando também para nos auxiliar no que fosse possível. Nosso muito obrigada!
+<h2>Telas</h2>
+<h3>Página Inicial</h3>
+<img src="./Projeto-JSF/assets/Home-ProjetoJSF.png" alt="Página Inicial"/>
+<h3>Cadastro de Pessoa Física</h3>
+<img src="./Projeto-JSF/assets/CadastroPF-ProjetoJSF.png" alt="Cadastro de Pessoa Física"/>
+<h3>Cadastro de Pessoa Jurídica</h3>
+<img src="./Projeto-JSF/assets/CadastroPJ-ProjetoJSF.png" alt="Cadastro de Pessoa Jurídica" />
+<h3>Listagem de Usuários</h3>
+<img src="./Projeto-JSF/assets/Listagem-ProjetoJSF.png" alt="Cadastro de Pessoa Jurídica"/>
+
+<h2>Créditos</h2>
+<p>É válido ressaltar nosso agradecimento especial a nosso gestor <strong>Nelson Konishi</strong> que nos prestou todo apoio e nos permitiu explorar os conhecimentos adquiridos, além de nos guiar muito bem, realmente se comprometendo com nosso aprendizado. Também os créditos ao <strong>Felipe Henrique</strong> que nos ajudou muito na base de conhecimento em JSF e microserviços, se disponibilizando também para nos auxiliar no que fosse possível. Nosso muito obrigada!</p>
