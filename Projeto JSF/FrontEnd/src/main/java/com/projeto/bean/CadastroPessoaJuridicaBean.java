@@ -5,8 +5,6 @@ import com.projeto.model.PessoaJuridica;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 
-
-
 import java.io.OutputStream;
 import java.io.Serializable;
 import java.net.HttpURLConnection;

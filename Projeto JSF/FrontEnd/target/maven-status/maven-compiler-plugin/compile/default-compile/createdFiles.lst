@@ -5,4 +5,7 @@ com\projeto\service\PessoaFisicaServiceClient$1.class
 com\projeto\service\PessoaFisicaServiceClient.class
 com\projeto\bean\CadastroPessoaFisicaBean.class
 com\projeto\model\PessoaFisica.class
+com\projeto\service\PessoaJuridicaServiceClient$1.class
+com\projeto\service\PessoaJuridicaServiceClient.class
+com\projeto\bean\PessoaJuridicaBean.class
 com\projeto\model\PessoaJuridica.class

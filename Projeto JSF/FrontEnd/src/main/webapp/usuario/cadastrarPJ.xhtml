@@ -13,9 +13,9 @@
             <p:panel header="Cadastro de Pessoa Jurídica:" style="width:900px; justify-self: center; margin-top: 15px" styleClass="painel-alteracao">
                 <p:messages showDetail="true" closable="true"/>
 
-                <p:outputLabel for="nomeFantasia" value="Nome Fantasia:" style="text-align: left; white-space: nowrap;" styleClass="label"/>
-                <p:inputText id="nomeFantasia"
-                             value="#{cadastroPessoaJuridicaBean.pessoaJuridica.nomeFantasia}"
+                <p:outputLabel for="nome" value="Nome Fantasia:" style="text-align: left; white-space: nowrap;" styleClass="label"/>
+                <p:inputText id="nome"
+                             value="#{cadastroPessoaJuridicaBean.pessoaJuridica.nome}"
                              style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="razaoSocial" value="Razão Social:" style="text-align: left; white-space: nowrap;"
@@ -47,20 +47,12 @@
                              styleClass="input"/>
 
                 <p:outputLabel for="estado" value="Estado:" style="text-align: left; white-space: nowrap" styleClass="label"/>
-                <h:selectOneMenu id="estado"
-                                 value="#{cadastroPessoaJuridicaBean.pessoaJuridica.estado}"
-                                 styleClass="ui-selectonemenu select-custom input"
-                                 style="width: 100%;">
-                    <f:passThroughAttribute name="data-estado-salvo" value="#{cadastroPessoaJuridicaBean.pessoaJuridica.estado}" />
-                </h:selectOneMenu>
+                <p:inputText id="estado" value="#{cadastroPessoaJuridicaBean.pessoaJuridica.estado}"
+                             style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="cidade" value="Cidade:" style="text-align: left; white-space: nowrap;" styleClass="label"/>
-                <h:selectOneMenu id="cidade"
-                                 value="#{cadastroPessoaJuridicaBean.pessoaJuridica.cidade}"
-                                 styleClass="ui-selectonemenu select-custom input"
-                                 style="width: 100%;">
-                    <f:passThroughAttribute name="data-cidade-salvo" value="#{cadastroPessoaJuridicaBean.pessoaJuridica.cidade}" />
-                </h:selectOneMenu>
+                <p:inputText id="cidade" value="#{cadastroPessoaJuridicaBean.pessoaJuridica.cidade}"
+                             style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="CEP" value="CEP:" styleClass="label"/>
                 <p:inputMask id="CEP"

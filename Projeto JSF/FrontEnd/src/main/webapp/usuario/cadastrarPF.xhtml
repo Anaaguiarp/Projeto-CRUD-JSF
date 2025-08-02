@@ -74,12 +74,8 @@
                              styleClass="input"/>
 
                 <p:outputLabel for="estado" value="Estado:" style="text-align: left; white-space: nowrap" styleClass="label"/>
-                <p:selectOneRadio id="estado" value="#{cadastroPessoaFisicaBean.pessoaFisica.estado}"
-                                  layout="lineDirection" styleClass="input">
-                    <f:selectItem itemLabel="PR" itemValue="PR"/>
-                    <f:selectItem itemLabel="RO" itemValue="RO"/>
-                    <f:selectItem itemLabel="RR" itemValue="RR"/>
-                </p:selectOneRadio>
+                <p:inputText id="estado" value="#{cadastroPessoaFisicaBean.pessoaFisica.estado}"
+                             style="width:100%;" styleClass="input"/>
 
                 <p:outputLabel for="cidade" value="Cidade:" style="text-align: left; white-space: nowrap;" styleClass="label"/>
                 <p:inputText id="cidade" value="#{cadastroPessoaFisicaBean.pessoaFisica.cidade}"

@@ -38,7 +38,7 @@ public class PessoaFisicaRepositoryAdapter implements PessoaFisicaRepositoryPort
 
 
     private PessoaFisicaEntity toEntity(PessoaFisica pessoaFisica) {
-        var e = new PessoaFisicaEntity();
+        PessoaFisicaEntity  e = new PessoaFisicaEntity();
 
         e.setId(pessoaFisica.getId());
         e.setNome(pessoaFisica.getNome());
@@ -64,7 +64,7 @@ public class PessoaFisicaRepositoryAdapter implements PessoaFisicaRepositoryPort
 
         if (pessoaFisica.getId() != null && jpa.existsById(pessoaFisica.getId())) {
             e = jpa.findById(pessoaFisica.getId())
-                    .orElseThrow();
+                    .orElseThrow(() -> new RuntimeException("PessoaFisica não encontrada"));
             e.setNome(pessoaFisica.getNome());
             e.setCpf(pessoaFisica.getCpf());
             e.setDataNasc(pessoaFisica.getDataNasc());

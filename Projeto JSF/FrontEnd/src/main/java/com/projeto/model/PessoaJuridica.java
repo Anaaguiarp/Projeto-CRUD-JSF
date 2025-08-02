@@ -3,7 +3,7 @@ package com.projeto.model;
 import java.time.LocalDate;
 
 public class PessoaJuridica {
-    private String nomeFantasia;
+    private String nome;
     private String razaoSocial;
     private String cnpj;
     private String email;
@@ -17,12 +17,12 @@ public class PessoaJuridica {
     private String estado;
     private String complemento;
 
-    public String getNomeFantasia() {
-        return nomeFantasia;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeFantasia(String nomeFantasia) {
-        this.nomeFantasia = nomeFantasia;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getRazaoSocial() {
